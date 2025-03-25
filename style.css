@@ -1,0 +1,922 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.empty{
+    font-size: medium;
+}
+
+body{
+   background-color: white;
+}
+/* header */
+header{
+    height: 70px;
+    width: 100vw;
+    background: rgb(246,240,240);
+    background: linear-gradient(90deg, rgba(246,240,240,1) 0%, rgba(117,137,140,0.7167659300048144) 100%);
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    z-index: 90;
+}
+
+.carousel-inner {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel-inner img {
+    width: 100%;
+    height: auto;         /* Secara default tinggi otomatis */
+    object-fit: cover;    /* Agar gambar tetap proporsional */
+    display: block;
+  }
+
+header nav{
+    max-width: 1400px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+.symbol{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 100px;
+}
+.symbol div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.symbol div a{
+    display: inline-block;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+.menu-buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 180px;
+}
+.menu-buttons.off{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cart-count{
+    position: absolute;
+    font-size: 9px;
+    left: 22px;
+    top: 6px;
+    background-color: black;
+    width: 11px;
+    height: 12px;
+    border-radius: 11px;
+    color: #fff;
+    opacity: 0.8;
+}
+
+.cart-icon a:hover ,.filter-icon a:hover,.contact-icon a:hover,.back-icon a:hover{
+    background-color: #75898c;
+}
+.cart-icon a .cart-btn,
+.filter-icon a .filter-btn,
+.filter-icon a .filter-click,
+.contact-icon a .contact-btn,
+.back-icon a .back-btn{
+    font-size: 1.5rem;
+    color: black;
+    position: relative;
+    display: flex;
+    
+}
+.back-icon.off{
+    display: none;
+}
+/* cart menu css */
+.cart-menu{
+    position: fixed;
+    top: 0;
+    right: -150%;
+    width: 400px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 4px #1b1b1b;
+    z-index: 150;
+    transition: 0.5s  ;
+}
+.cart-menu.active{
+    right: 0;
+    transition: 0.5s;
+}
+.cart-title{
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #1b1b1b;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 1rem;
+}
+.cart-box{
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 12px;
+    background: rgb(246,240,240);
+    background: linear-gradient(90deg, rgba(246,240,240,1) 0%, rgba(117,137,140,1) 100%);
+}
+.cart-img{
+    width: 75px;
+    object-fit: cover;
+    padding: 5px;
+    margin: 8px;
+}
+.cart-detail{
+    display: grid;
+    row-gap: 0.5rem;
+}
+.cart-shoes-title{
+    font-weight: 200;
+    font-size: 1.1rem;
+    color: #1b1b1b;
+    font-family: 'Poppins', sans-serif;;
+}
+.cart-price-box{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+.cart-quantity{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    outline: none;
+    width: 2.4rem;
+    text-align: center;
+    font-size: 0.8rem;
+    border-radius: 3px;
+    background-color: white;
+    color: #1b1b1b;
+}
+.cart-remove{
+    cursor: pointer;
+    color: #1b1b1b;
+    padding: 6px;
+    border-radius: 5px;
+}
+.cart-remove:hover{
+    color: #000;
+}
+.total{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+.total-title{
+    font-size: 1rem;
+    font-weight: 200;
+}
+.total-price{
+    margin-left: 0.5rem;
+}
+.btn-buy{
+    padding: 12px 20px;
+    background-color: #1b1b1b;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.cart-close{
+   position: absolute;
+   top: 1rem;
+   right: 0.8rem;
+   font-size: 1.6rem;
+   cursor: pointer;
+   font-weight: 600;
+}
+.no-cart-filter.off{
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    width: 100%;
+    padding-left: 100px;
+    padding-bottom: 40px;
+    padding-top: 20px;
+    color: #cecece;
+    display: block;
+}
+.no-cart-filter{
+    display: none;
+}
+/* ad giant pizza */
+.all-content,.filter-box,.receipt-box{
+    display: block;
+}
+.all-content{
+    z-index: 99;
+}
+.filter-box{
+    z-index: 100;
+}
+.receipt-box{
+    z-index:150;
+}
+.all-content.off,
+.filter-box.off,.receipt-box.off{
+    display: none;
+}
+.filter-content{
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 100;
+}
+.filter-icon.active a .filter-btn,
+.filter-icon a .filter-click{
+    display: none;
+}
+.filter-icon.active a .filter-click,
+.filter-icon a .filter-btn{
+    display: block;
+}
+.filter-buttons{
+    width: 100%;
+    height: 160px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    background-color:transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 1px 4px #cecece;  
+}
+.filter-items{
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+}
+.filters{
+    color: #000;
+    width: 120px;
+    height: 36px;
+    border: 3px solid #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 5px;
+    z-index: 80;
+}
+.filters:hover,
+.filters.active{
+    background-color: #000;
+    color: #fff;
+}
+.filter-search{
+    width: 700px;
+    position: relative;
+}
+.search-icon{
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    font-size: 20px;
+}
+#search{
+    outline: none;
+    width: 100%;
+    height: 45px;
+    font-size: 16px;
+    border: 0;
+    border-radius: 22px;
+    color: #1b1b1b;
+    padding-left: 64px;
+}
+.no-result-filter{
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 100;
+    width: 300px;
+    height: 100px;
+    left: 600px;
+    display: block;   
+}
+.no-result-filter.off{
+    display: none;
+}
+.nr-search-icon{
+    font-weight: 600;
+    font-size: 32px;
+}
+/* pizza ad css */
+.adios-ad{
+    width: 100vw;
+    height: 500px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;   
+}
+.adios-ad .ad-detail{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    
+}
+.adios-ad .ad-detail h2{
+    font-family: 'Poppins', sans-serif;
+   
+}
+.adiosad .ad-detail h3{
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px; 
+    padding-top: 18px;
+}
+.adios-ad .ad-detail h4{
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px; 
+    padding-top: 30px;
+}
+.ad-image{
+    width: 50%;
+}
+/* MENU SECTION */
+img{
+    width: 100%;
+}
+.adios-container,
+.casual-container,
+.sport-container,
+.slippers-container,
+.combo-container{
+    max-width: 1200px;
+    padding: 4rem;
+    margin: auto;
+    width: 100%;
+}
+h2.title{
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #000;
+}
+.sneaker-content,
+.casual-content,
+.sport-content,
+.slippers-content,
+.combo-content,
+.filter-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,auto));
+    gap: 1.7rem;
+    justify-content: center;
+    align-content: center; 
+}
+.shoes-box {
+    background: rgb(246,240,240);
+background: linear-gradient(90deg, rgba(246,240,240,1) 0%, rgba(117,137,140,1) 100%);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 6px 10px #cecece;
+    position: relative;
+    max-width: 360px;
+    text-align: center; /* Pusatkan teks */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Pusatkan elemen vertikal */
+}
+
+.shoes-img {
+    width: 90%;
+    filter: drop-shadow(0 50px 20px #0009);
+    border-radius: 20px;
+    margin-bottom: 10px; /* Beri sedikit jarak */
+}
+
+.shoes-title {
+    font-size: 1rem;
+    font-weight: 200;
+    color: #000;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+
+    margin-bottom: 5px; /* Beri sedikit jarak */
+}
+
+.shoes-price {
+    font-weight: 550;
+    color: #1b1b1b;
+    margin-bottom: 10px; /* Beri sedikit jarak */
+}
+
+.add-cart-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #1b1b1b;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: 0.5s;
+    border-radius: 20px;
+}
+
+.add-cart-btn:hover {
+    color: #000;
+    background-color: #AC7D88;;
+}
+
+/* receipt box css */
+.receipt-box{
+    margin: 90px auto;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 1600px;
+    align-items: center;
+}
+.bill-box{
+    width: 100%;
+    height: 100%;
+    margin: 30px;
+    padding: 30px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #000}
+
+th {
+  background-color: #75898c;
+  color: #000;
+}
+
+.customer-detail{
+    width: 600px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #75898c;
+    margin: 10px;
+    padding: 30px;
+    border-radius: 10px;
+}
+label{
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    color: #000;
+    font-weight: 600;
+}
+.main-info{
+    font-size: 18px;
+    padding: 8px 0;
+    width: 120px;
+}
+.customer-detail input{
+    outline: none;
+    width: 100%;
+    height: 35px;
+    font-size: 16px;
+    border: 0;
+    border-radius: 22px;
+    color: #1b1b1b;
+    padding-left: 60px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+.cbtn-space{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.all-total{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: 30px auto;
+}
+
+.confirm-order{
+    margin-top: 16px;
+    padding: 12px 20px;
+    width: 180px;
+    background-color: #1b1b1b;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;   
+}
+.address{
+    width: 180px;
+}
+.add-info{
+    display: flex;
+    height: 50px;
+    align-items: center;
+}
+
+/* footer css */
+
+footer{
+    padding: 4rem;
+    margin: auto;
+    width: 100%;
+    background-color: transparent;
+    bottom: 0;
+}
+.footer-box{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,auto));
+    gap: 3rem;
+    justify-content: center;
+    align-content: center; 
+}
+.footer-box .symbol{
+   margin: 0 30px;
+}
+.footer-add {
+    display: flex;
+    gap: 20px; /* Jarak antar elemen, sesuaikan dengan kebutuhan */
+    align-items: center;
+  }
+  
+.footer-info{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: 'Poppins', sans-serif;
+}
+.footer-info div{
+    width: 100%;
+    text-align: start;
+    display: flex;
+    align-items: center;
+}
+.footer-info div span{
+    padding-left: 20px;
+} 
+.success-display.off{
+    display: none;
+}
+.success-display{
+    display: block;
+}
+.success-box{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(255, 233, 65);
+}
+.success-mes div p{
+   font-size: 28px; 
+   font-family: 'Poppins', sans-serif;
+}
+.success-mes div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.success-mes div .cart-suc{
+    font-size: 28px;
+}
+.success-mes a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+.success-mes a p{
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+.success-mes a p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+@media(max-width:1678px){
+    .ad-image{
+      height: 320px;
+    }
+    /* menu css mobile */
+    header{
+        width: 100%;
+    }
+    .carousel-inner {
+        width: 900px;
+
+     font-size: 1.5rem;
+    color: black;
+    position: relative;
+    display: flex;
+    
+        
+    }}
+
+    @media (min-width: 1400px) {
+        .cart-icon, .filter-icon, .contact-icon {
+          width: 60px;  /* Atau gunakan unit responsif seperti rem */
+          height: 60px;
+        }
+        
+        .cart-icon a, .filter-icon a, .contact-icon a {
+          font-size: 1.8rem; /* Sesuaikan dengan kebutuhan */
+        }
+      }
+      
+/* mobile version */
+@media(max-width:1374px){
+.ad-image{
+  height: 320px;
+}
+/* menu css mobile */
+header{
+    width: 100%;
+}
+.carousel-inner {
+    width: 900px;
+    
+}
+}
+@media(max-width:888px){
+    .filter-buttons{
+        width: 100%; 
+    }
+    .filter-items{
+        width: 80%;
+    }
+    .filters{
+        width: 90px;
+        height: 32px;
+        font-size: 11px;
+    }
+   .footer-box .symbol{
+    display: none;
+   }
+
+   .carousel-inner {
+    width: 750px; 
+    }
+}
+@media(max-width:674px){
+  
+      .filter-buttons{
+        width: 100%; 
+    } 
+    .filter-items{
+        width: 80%;
+    }
+    .filters{
+        width: 72px;
+        height: 30px;
+        font-size: 10px;
+    }
+    .filter-search{
+        width: 80%;
+    }
+    .customer-detail{
+        width: 100%;
+        height: 400px;
+        margin: 6px;
+        padding: 22px;
+    }
+    .bill-box{
+        width: 100%;
+        height: 100%;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .carousel-inner {
+        width: 500px;
+        }
+}
+@media(max-width:494px){
+     .adios-ad{
+        flex-direction: column;
+     }
+     .ad-image{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+     .ad-image img{
+        height: 180px;
+        width: 360px;
+        padding-top: 10px;
+     }
+    .cart-menu{
+        width: 360px;
+    }
+    .filter-buttons{
+        height: 240px;
+        width: 100%; 
+    }
+    .filter-items{
+        width: 50%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 8px;
+        justify-content: center;
+        align-items: center;
+    }
+    .filters{
+        font-size: 8px;
+        width: 60px;
+        height: 28px;
+    }
+    .filter-search{
+        width: 80%;
+    }
+    .symbol div a{
+        font-size: 12px;
+    }
+    .menu-buttons{
+        padding-right: 18px;
+    } 
+
+    .carousel-inner {
+        width: 450px;  
+        }
+    
+}
+
+
+/* css detail */
+/* style.css */
+/* style.css */
+/* Pastikan html dan body memenuhi tinggi viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Atur body agar menggunakan Flexbox dengan arah kolom */
+  body.detail-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Minimum 100% tinggi viewport */
+    background: #f4f4f4;
+  }
+  
+  /* Header styling tetap sama (misalnya sudah ada) */
+  header {
+    /* Contoh: */
+    background: rgb(246,240,240);
+    background: linear-gradient(90deg, rgba(246,240,240,1) 0%, rgba(117,137,140,0.72) 100%);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 90;
+  }
+  
+  /* Tambahkan padding-top pada main untuk menghindari tertutup header */
+  main.main-content {
+    flex: 1; /* Main akan mengambil ruang tersisa */
+    padding-top: 70px; /* Sesuaikan dengan tinggi header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Detail container */
+  .detail-container {
+    width: 800px;
+    max-width: 90%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Atur ukuran gambar agar lebih kecil */
+  .detail-container img {
+    width: auto;
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .detail-container h1 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .detail-container p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  /* Footer styling */
+  footer#footer-detail {
+    padding: 4rem 20px;
+    width: 100%;
+    /* Footer selalu berada di bagian bawah, tidak perlu flex properties khusus di sini */
+  }
+
+  
+.back-btn-detail {
+    position: absolute;
+    top: 10px;   /* jarak dari atas container */
+    left: 10px;  /* jarak dari kiri container */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px; /* ukuran icon */
+    z-index: 10; /* pastikan berada di atas elemen lain */
+  }
+
+  #add-to-cart {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+
+
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .detail-container {
+      padding: 15px;
+    }
+    
+    .detail-container h1 {
+      font-size: 1.5rem;
+    }
+    
+    .detail-container p {
+      font-size: 0.9rem;
+    }
+  }
+  
+

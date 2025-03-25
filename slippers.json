@@ -1,0 +1,98 @@
+[
+    {
+        "image": "images/50.png",
+        "shoes_name" : "Slipper Adios 1",
+        "shoes_price": "$.79" ,
+        "id" : "s-001"
+          ,"detail":"lorem ipsum"
+    },
+
+    {
+        "image": "images/51.png",
+        "shoes_name" : "Slipper Adios 2",
+        "shoes_price": "$.79" ,
+        "id" : "s-002"
+          ,"detail":"lorem ipsum"
+    },
+
+    {
+        "image": "images/52.png",
+        "shoes_name" : "Slipper Adios 3",
+        "shoes_price": "$.79" ,
+        "id" : "s-003"
+          ,"detail":"lorem ipsum"
+    },
+
+    {
+        "image": "images/53.png",
+        "shoes_name" : "Slipper Adios 4",
+        "shoes_price": "$.79", 
+        "id" : "s-004"
+          ,"detail":"lorem ipsum"
+    },
+
+    {
+        "image": "images/54.png",
+        "shoes_name" : "Slipper Adios 5",
+        "shoes_price": "$.79" ,
+        "id" : "s-005"
+          ,"detail":"lorem ipsum"
+    },
+
+    {
+        "image": "images/55.png",
+        "shoes_name" : "Slipper Adios 6",
+        "shoes_price": "$.99" ,
+        "id" : "s-006"
+          ,"detail":"lorem ipsum"
+    },
+    
+    {
+        "image": "images/56.png",
+        "shoes_name" : "Slipper Adios 7",
+        "shoes_price": "$.99", 
+        "id" : "s-007"
+          ,"detail":"lorem ipsum"
+    },
+    
+    {
+        "image": "images/5.png",
+        "shoes_name" : "Slipper Adios 8",
+        "shoes_price": "$.99" ,
+        "id" : "s-008"
+          ,"detail":"lorem ipsum"
+    },
+    
+    
+    {
+        "image": "images/57.png",
+        "shoes_name" : "Slipper Adios 9",
+        "shoes_price": "$.99" ,
+        "id" : "s-009"
+          ,"detail":"lorem ipsum"
+    },
+    
+    {
+        "image": "images/58.png",
+        "shoes_name" : "Slipper Adios 10",
+        "shoes_price": "$.99" ,
+        "id" : "s-010"
+          ,"detail":"lorem ipsum"
+    },
+
+    {
+        "image": "images/59.png",
+        "shoes_name" : "Slipper Adios 11",
+        "shoes_price": "$.109" ,
+        "id" : "s-011"
+          ,"detail":"lorem ipsum"
+    },
+    {
+        "image": "images/60.png",
+        "shoes_name" : "Slipper Adios 12",
+        "shoes_price": "$.109" ,
+        "id" : "s-011"
+          ,"detail":"lorem ipsum"
+    }
+
+]  

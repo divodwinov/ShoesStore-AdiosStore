@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adios Avenue</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+   
+   <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+        crossorigin="anonymous"></script>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="symbol">
+        
+          <div>
+            <a href="#">Adios Avenue</a>
+          </div>
+        </div>
+        <div class="menu-buttons">
+          <div class="filter-icon">
+            <a href="#">
+              <ion-icon name="filter-outline" class="filter-btn"></ion-icon>
+              <ion-icon
+                name="filter-circle-outline"
+                class="filter-click"
+              ></ion-icon>
+            </a>
+          </div>
+          <div class="cart-icon">
+            <div class="cart-count">0</div>
+            <a href="#"><ion-icon name="cart-outline" class="cart-btn"></ion-icon></a>
+          </div>
+          <div class="contact-icon">
+            <a href="#footer"><ion-icon name="call-outline" class="contact-btn"></ion-icon></a>
+          </div>
+        </div>
+        <div class="back-icon off">
+          <a><ion-icon name="chevron-back-outline" class="back-btn"></ion-icon></a>
+        </div>
+        <div class="cart-menu">
+          <div class="cart-title">Cart Items</div>
+          <div class="cart-content">
+            <div class="no-cart-filter">
+              <ion-icon name="cart-outline" class="cart-btn"></ion-icon>
+              <span class="empty">Your Cart Is Empty</span>
+            </div>
+          </div>
+
+          <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">Rs.0</div>
+          </div>
+          <button class="btn-buy">Place Order</button>
+          <ion-icon name="close" class="cart-close"></ion-icon>
+        </div>
+      </nav>
+    </header>
+    <!-- ad section -->
+    <div class="all-content">
+      <section class="adios-ad">
+        <div class="ad-detail">
+          <h2>ADIOS AVENUE</h2>
+          <!-- <h4>Ur Shoes is Ur Crown </h4> -->
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="images/banner.jpeg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/banner2.jpeg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/banner3.jpeg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
+      </section>
+      <!-- menu section -->
+      <section class="adios-container">
+        <h2 class="title">Adios Sneakerz</h2>
+        <div class="sneaker-content"></div>
+      </section>
+      <section class="casual-container">
+        <h2 class="title">Adios Casualz</h2>
+        <div class="casual-content"></div>
+      </section>
+      <section class="sport-container">
+        <h2 class="title">Adios Sportz</h2>
+        <div class="sport-content"></div>
+      </section>
+      <section class="slippers-container">
+        <h2 class="title">Adios Slippers</h2>
+        <div class="slippers-content"></div>
+      </section>
+      
+    </div>
+    <section class="filter-box off">
+      <div class="filter-buttons">
+        <div class="filter-items">
+          <a href="#" class="filters" data-filter="all">All items</a>
+          <a href="#" class="filters" data-filter="sneaker">Sneaker</a>
+          <a href="#" class="filters" data-filter="casual">Casual</a>
+          <a href="#" class="filters" data-filter="sport">Sport</a>
+          <a href="#" class="filters" data-filter="slippers">Slippers</a>
+        </div>
+        <div class="filter-search">
+          <ion-icon name="search-outline" class="search-icon"></ion-icon>
+          <input type="text" placeholder="Search Item" id="search" />
+        </div>
+      </div>
+      <div class="filter-content">
+        <div class="no-result-filter off">
+          <ion-icon name="search-outline" class="nr-search-icon"></ion-icon>
+          <span>No Results Found</span>
+        </div>
+      </div>
+    </section>
+    <section class="receipt-box off">
+      <div  class="bill-box">
+      <table class="e-bill">
+         <tr class="table-head">
+          <th>Item Name</th>
+          <th>Item Price</th>
+          <th>Quantity</th>
+          <th>Total Price</th>
+         </tr>
+      </table>
+    <div class="all-total">
+    <div class="totalAmt">
+      <label for="sub-total-amt">Sub Total</label><div class="sub-total-amt"></div>
+      <label for="tax-amt">Tax 5%</label><div class="tax-amt"></div>
+    </div>
+    <div class="total-amt-box">
+      <label for="full-total">Total Amount</label><div class="full-total"></div>
+    </div>
+    </div>
+  </div> 
+      <div class="customer-detail">
+        <div class="add-info">
+        <label for="input-name" class="main-info">Name*</label>
+        <input type="text" id="input-name" placeholder="*name required"/></div>
+        <div class="add-info">
+        <label for="input-phone" class="main-info">Phone*</label>
+        <input type="text" id="input-phone" placeholder="*phone required"/></div>
+        <div class="add-info">
+        <label for="input-door" class="address">Addres*</label>
+        <input type="text" id="input-door"/></div>
+        <div class="add-info">
+        <label for="input-street" class="address">Street*</label>
+        <input type="text" id="input-street"/></div>
+        <div class="add-info">
+        <label for="input-city" class="address">Town/City*</label>
+        <input type="text" id="input-city" /></div>
+        <div class="add-info">
+        <label for="input-state" class="address">State*</label>
+        <input type="text" id="input-state" /></div>
+        <div class="add-info">
+        <label for="input-pin" class="address">Pincode*</label>
+        <input type="text" id="input-pin"/></div>
+        <div class="cbtn-space"><button class="confirm-order">Confirm Order</button></div>
+      </div>
+    </section>
+
+    <section class="success-display off">
+      <div class="success-box">
+          <div class="success-mes">
+           <div><ion-icon name="cart-outline" class="cart-suc"></ion-icon><p>Your Order Is Confirmed</p></div>
+           <a class="refresh"><ion-icon name="arrow-back-outline"></ion-icon><p>back to home page</p></a>
+          </div>
+      </div>
+      </section>
+
+    <footer id="footer">
+      <div  class="footer-box">
+      <div class="symbol">
+        <div>
+          <a href="#">Adios</a>
+          <a href="#">Avneue</a>
+        </div>
+      </div>
+      <div class="footer-add">
+          <div class="footer-loc"></ion-icon><p>Adio Avenue Kukusan,</p>
+           <p> Depok,Jawa Barat,</p>
+            <p>POS-620001.</p>
+          </p></div>
+      </div>
+      <div class="footer-info">
+        <div><ion-icon name="call-outline" class="contact-btn"></ion-icon><span>+62 812-9830-6063</span></div>
+        <div><ion-icon name="logo-instagram"></ion-icon><span>adios_avenue</span></div>
+        <div><ion-icon name="logo-facebook"></ion-icon><span>adiosavenue</span></div>
+        <div><ion-icon name="logo-whatsapp"></ion-icon><span>+62 812-9830-6063</span></div>
+      </div>
+    </div>    
+    </footer>
+  </body>
+</html>

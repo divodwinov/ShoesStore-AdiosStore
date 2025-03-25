@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="html-detail" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Sepatu</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  </head>
+  <body class="detail-body">
+    <header>
+      <nav>
+        <div class="symbol">
+          <div>
+            <a href="index.html">Adios Avenue</a>
+          </div>
+        </div>
+        <div class="menu-buttons">
+          <div class="filter-icon">
+            <!-- Bisa ditambahkan icon filter bila diperlukan -->
+          </div>
+          <div class="cart-icon">
+            <div class="cart-count">0</div>
+            <a href="#cart-menu">
+              <ion-icon name="cart-outline" class="cart-btn"></ion-icon>
+            </a>
+          </div>
+          <div class="contact-icon">
+            <a href="#footer-detail">
+              <ion-icon name="call-outline" class="contact-btn"></ion-icon>
+            </a>
+          </div>
+        </div>
+        <div class="back-icon off">
+          <a>
+            <ion-icon name="chevron-back-outline" class="back-btn"></ion-icon>
+          </a>
+        </div>
+        <!-- Cart Menu -->
+        <div class="cart-menu" id="cart-menu">
+          <div class="cart-title">Cart Items</div>
+          <div class="cart-content">
+            <div class="no-cart-filter">
+              <ion-icon name="cart-outline" class="cart-btn"></ion-icon>
+              <span class="empty">Your Cart Is Empty</span>
+            </div>
+          </div>
+          <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">Rs.0</div>
+          </div>
+          <button class="btn-buy">Place Order</button>
+          <ion-icon name="close" class="cart-close"></ion-icon>
+        </div>
+      </nav>
+    </header>
+    
+    <main class="main-content">
+      <div class="detail-container">
+        <!-- Tombol Back -->
+        <button id="back-btn" class="back-btn-detail">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </button>
+        <img id="detail-image" src="" alt="Sepatu" />
+        <h1 id="detail-name"></h1>
+        <p id="detail-price"></p>
+        <p id="detail-desc"></p>
+        <!-- Tombol Add to Cart -->
+        <button id="add-to-cart">Add to Cart</button>
+      </div>
+    </main>
+    
+    <footer id="footer-detail">
+      <div class="footer-box">
+        <div class="symbol">
+          <div>
+            <a href="#">Adios</a>
+            <a href="#">Avneue</a>
+          </div>
+        </div>
+        <div class="footer-add">
+          <div class="footer-loc">
+            <p>Adio Avenue Kukusan,</p>
+            <p>Depok, Jawa Barat,</p>
+            <p>POS-620001.</p>
+          </div>
+        </div>
+        <div class="footer-info">
+          <div>
+            <ion-icon name="call-outline" class="contact-btn"></ion-icon>
+            <span>+62 812-9830-6063</span>
+          </div>
+          <div>
+            <ion-icon name="logo-instagram"></ion-icon>
+            <span>adios_avenue</span>
+          </div>
+          <div>
+            <ion-icon name="logo-facebook"></ion-icon>
+            <span>adiosavenue</span>
+          </div>
+          <div>
+            <ion-icon name="logo-whatsapp"></ion-icon>
+            <span>+62 812-9830-6063</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Ambil data dari localStorage dan tampilkan di detail page
+        const detailData = JSON.parse(localStorage.getItem("detailData"));
+        if (detailData) {
+          document.getElementById("detail-image").src = detailData.image;
+          document.getElementById("detail-name").textContent = detailData.shoes_name;
+          document.getElementById("detail-price").textContent = detailData.shoes_price;
+          document.getElementById("detail-desc").textContent = detailData.detail;
+        }
+        
+        // Event listener untuk tombol back
+        const backBtnDetail = document.getElementById("back-btn");
+        backBtnDetail.addEventListener("click", function () {
+          window.location.href = "index.html";
+        });
+        
+        // Event listener untuk tombol "Add to Cart"
+        const addToCartBtn = document.getElementById("add-to-cart");
+        addToCartBtn.addEventListener("click", function () {
+          if (!detailData) return;
+          const itemDetail = {
+            title: detailData.shoes_name,
+            price: detailData.shoes_price,
+            image: detailData.image
+          };
+          addItemToCart(itemDetail);
+        });
+        
+        // Fungsi untuk menambahkan item ke cart
+        function addItemToCart(itemDetail) {
+          // Gunakan global itemList jika sudah ada di index.js; jika tidak, buat array baru
+          if (typeof itemList === "undefined") {
+            window.itemList = [];
+          }
+          // Cegah penambahan item yang sama
+          if (itemList.find(item => item.title === itemDetail.title)) {
+            alert("Item sudah ada di cart!");
+            return;
+          }
+          itemList.push(itemDetail);
+          
+          const cartContent = document.querySelector(".cart-content");
+          const productElement = `
+            <div class="cart-box"> 
+              <img src="${itemDetail.image}" class="cart-img" alt="${itemDetail.title}" />
+              <div class="cart-detail">
+                <div class="cart-shoes-title">${itemDetail.title}</div>
+                <div class="cart-price-box">
+                  <div class="cart-price">${itemDetail.price}</div>
+                  <div class="cart-amt">${itemDetail.price}</div>
+                </div>
+                <input type="number" value="1" class="cart-quantity" />
+              </div>
+              <ion-icon name="trash" class="cart-remove"></ion-icon>
+            </div>`;
+          
+          const newElement = document.createElement("div");
+          newElement.innerHTML = productElement;
+          cartContent.append(newElement);
+          
+          // Update cart menggunakan fungsi dari index.js (jika tersedia)
+          if (typeof cartEvents === "function") cartEvents();
+          if (typeof updateTotal === "function") updateTotal();
+        }
+        
+        // Event smooth scroll untuk tombol contact (jika belum aktif)
+        const contactLink = document.querySelector(".contact-icon a");
+        contactLink.addEventListener("click", function (e) {
+          e.preventDefault();
+          const footer = document.getElementById("footer-detail");
+          footer.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+    </script>
+  </body>
+</html>

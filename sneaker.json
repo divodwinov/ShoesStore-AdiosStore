@@ -1,0 +1,65 @@
+[
+    {
+        "image": "images/1.png",
+        "shoes_name" : "Sneakerz Adios 1",
+        "shoes_price": "$.349",
+        "id": "nv-001" ,
+        "detail":"lorem ipsum"
+    },
+
+    {
+        "image": "images/2.png",
+        "shoes_name" : "Sneakerz Adios 2",
+        "shoes_price": "$.299",
+        "id": "nv-002",  
+        "detail":"lorem ipsum"
+    },
+
+    {
+        "image": "images/3.png",
+        "shoes_name" : "Sneakerz Adios 3",
+        "shoes_price": "$.299",
+        "id": "nv-003"  ,
+         "detail":"lorem ipsum"
+    },
+
+    {
+        "image": "images/4.png",
+        "shoes_name" : "Sneakerz Adios 4",
+        "shoes_price": "$.299",
+        "id": "nv-004" ,
+         "detail":"lorem ipsum"
+    },
+
+    {
+        "image": "images/5.png",
+        "shoes_name" : "Sneakerz Adios 5",
+        "shoes_price": "$.299",
+        "id": "nv-005" ,
+         "detail":"lorem ipsum"
+    },
+
+    {
+        "image": "images/6.png",
+        "shoes_name" : "Sneakerz Adios 5",
+        "shoes_price": "$.199",
+        "id": "nv-006" ,
+        "detail":"lorem ipsum" 
+    },
+
+    {
+        "image": "images/7.png",
+        "shoes_name" : "Sneakerz Adios 6",
+        "shoes_price": "$.199",
+        "id": "nv-007"  ,
+         "detail":"lorem ipsum"
+    },
+
+    {
+        "image": "images/8.png",
+        "shoes_name" : "Sneakerz Adios 7",
+        "shoes_price": "$.149",
+        "id": "nv-008" ,
+        "detail":"lorem ipsum" 
+    }
+]

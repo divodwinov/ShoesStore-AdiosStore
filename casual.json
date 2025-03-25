@@ -1,0 +1,50 @@
+[
+    {
+        "image": "images/5.png",
+        "shoes_name" : "Casual Adios 1",
+        "shoes_price": "$.149",
+        "id": "vp-001"
+          ,"detail":"lorem ipsum"
+    },
+
+    {
+        "image": "images/3.png",
+        "shoes_name" : "Casual Adios 2",
+        "shoes_price": "$.119",
+        "id": "vp-002" 
+          ,"detail":"lorem ipsum"
+    },
+
+    {
+        "image": "images/13.png",
+        "shoes_name" : "Casual Adios 3",
+        "shoes_price": "$.119",
+        "id": "vp-003" 
+          ,"detail":"lorem ipsum"
+    },
+
+    {
+        "image": "images/14.png",
+        "shoes_name" : "Casual Adios 4",
+        "shoes_price": "$.119",
+        "id": "vp-004" 
+          ,"detail":"lorem ipsum"
+    },
+
+    {
+        "image": "images/15.png",
+        "shoes_name" : "Casual Adios 5",
+        "shoes_price": "$.119",
+        "id": "vp-005" 
+          ,"detail":"lorem ipsum"
+    },
+    
+    {
+        "image": "images/16.png",
+        "shoes_name" : "Casual Adios 6",
+        "shoes_price": "$.119",
+        "id": "vp-006" 
+          ,"detail":"lorem ipsum"
+    }
+    
+]  
