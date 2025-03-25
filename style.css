@@ -16,6 +16,7 @@
     font-size: medium;
 }
 
+
 body{
    background-color: white;
 }
@@ -30,19 +31,6 @@ header{
     top: 0;
     z-index: 90;
 }
-
-.carousel-inner {
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  .carousel-inner img {
-    width: 100%;
-    height: auto;         /* Secara default tinggi otomatis */
-    object-fit: cover;    /* Agar gambar tetap proporsional */
-    display: block;
-  }
-
 header nav{
     max-width: 1400px;
     height: 100%;
@@ -82,7 +70,12 @@ header nav{
     opacity: 0;
     pointer-events: none;
 }
-
+.cart-icon,.filter-icon,.contact-icon,.back-icon{
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    position: relative; 
+}
 .cart-count{
     position: absolute;
     font-size: 9px;
@@ -95,7 +88,14 @@ header nav{
     color: #fff;
     opacity: 0.8;
 }
-
+.cart-icon a,.filter-icon a,.contact-icon a,.back-icon a{
+    height: 100%;
+    width: 100%;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .cart-icon a:hover ,.filter-icon a:hover,.contact-icon a:hover,.back-icon a:hover{
     background-color: #75898c;
 }
@@ -106,9 +106,7 @@ header nav{
 .back-icon a .back-btn{
     font-size: 1.5rem;
     color: black;
-    position: relative;
-    display: flex;
-    
+    position: absolute;
 }
 .back-icon.off{
     display: none;
@@ -652,7 +650,6 @@ footer{
     cursor: pointer;
 }
 
-
 @media(max-width:1678px){
     .ad-image{
       height: 320px;
@@ -672,19 +669,25 @@ footer{
         
     }}
 
-    @media (min-width: 1400px) {
-        .cart-icon, .filter-icon, .contact-icon {
-          width: 60px;  /* Atau gunakan unit responsif seperti rem */
-          height: 60px;
-        }
-        
-        .cart-icon a, .filter-icon a, .contact-icon a {
-          font-size: 1.8rem; /* Sesuaikan dengan kebutuhan */
-        }
-      }
-      
 /* mobile version */
 @media(max-width:1374px){
+/* pizza  ad mobile */
+.pizza-ad{
+  width: 100%;
+}
+.pizza-ad .ad-detail{
+  width: fit-content;
+  height: fit-content;
+}
+.pizza-ad .ad-detail h2{
+  font-size: 44px;
+}
+.pizza-ad .ad-detail h3{
+  font-size: 28px;
+}
+.pizza-ad .ad-detail h4{
+  font-size: 22px;
+}
 .ad-image{
   height: 320px;
 }
@@ -692,10 +695,10 @@ footer{
 header{
     width: 100%;
 }
+
 .carousel-inner {
-    width: 900px;
-    
-}
+    width: 900px;}
+
 }
 @media(max-width:888px){
     .filter-buttons{
@@ -718,7 +721,15 @@ header{
     }
 }
 @media(max-width:674px){
-  
+    .pizza-ad .ad-detail h2{
+        font-size: 32px;
+      }
+      .pizza-ad .ad-detail h3{
+        font-size: 24px;
+      }
+      .pizza-ad .ad-detail h4{
+        font-size: 20px;
+      }
       .filter-buttons{
         width: 100%; 
     } 
@@ -747,8 +758,9 @@ header{
     }
 
     .carousel-inner {
-        width: 500px;
-        }
+    width: 500px;
+    }
+
 }
 @media(max-width:494px){
      .adios-ad{
@@ -796,10 +808,9 @@ header{
         padding-right: 18px;
     } 
 
-    .carousel-inner {
-        width: 450px;  
-        }
-    
+        .carousel-inner {
+    width: 450px;  
+    }
 }
 
 
@@ -919,4 +930,3 @@ html, body {
     }
   }
   
-
